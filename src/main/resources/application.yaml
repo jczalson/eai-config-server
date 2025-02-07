@@ -5,10 +5,11 @@ spring:
     config:
       server:
         git:
-          uri: https://zalson@bitbucket.org/zalson/eai-config-files.git
+          uri: https://gitlab.com/zalson/eai-config-files.git
           cloneOnStart: true
           username: ${user}
           password: ${token}
+          default-label: ${branch-name:main}
       
 
 server:
