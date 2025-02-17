@@ -10,8 +10,12 @@ spring:
           username: ${user}
           password: ${token}
           default-label: ${branch-name:main}
-      
 
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    
 server:
   port: 8888   
    
