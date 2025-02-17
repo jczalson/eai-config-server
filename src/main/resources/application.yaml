@@ -8,7 +8,7 @@ spring:
           uri: https://gitlab.com/zalson/eai-config-files.git
           cloneOnStart: true
           username: ${user}
-          password: ${token}
+          password: ${token:glpat-8tuRYUbt7eQ4ZToVi5Gx}
           default-label: ${branch-name:main}
       
 
