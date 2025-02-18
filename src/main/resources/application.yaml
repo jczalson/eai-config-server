@@ -1,6 +1,8 @@
 spring:
   application:
     name: config-server
+  profiles:
+    active: local  
   cloud:
     config:
       server:
