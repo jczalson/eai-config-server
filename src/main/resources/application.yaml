@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: https://gitlab.com/zalson/eai-config-files.git
+          uri: ${repository-url:https://gitlab.com/zalson/eai-config-files.git}
           cloneOnStart: true
           username: ${user}
           password: ${token}
@@ -17,7 +17,7 @@ eureka:
     prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: ${eureka_service_url:http://localhost:8761/eureka}
+      defaultZone: ${eureka-service-url:http://localhost:8761/eureka}
     
 server:
   port: 8888   
