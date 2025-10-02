@@ -11,14 +11,6 @@ spring:
           password: ${token}
           default-label: ${branch-name:main}
 
-eureka:
-  instance:
-    hostname: localhost
-    prefer-ip-address: true
-  client:
-    serviceUrl:
-      defaultZone: ${eureka-service-url:http://localhost:8761/eureka}
-    
 server:
   port: 8888   
    
