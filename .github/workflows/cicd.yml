@@ -25,3 +25,23 @@ jobs:
         run: |
           mvn -B clean --file pom.xml
           mvn -B  package --file pom.xml -DskipTests
+
+      - name: Build Docker Image
+        uses: actions/build-push-action@v4
+        with:
+          context: .
+          dockerfile: Dockerfile
+          push: false
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/config-server:$(date +%Y%m%d%H%M%S)   
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      - name: Push Docker Image
+        uses: docker/build-push-action@v4 
+        with:
+          context: .
+          dockerfile: Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/config-server:$(date +%Y%m%d%H%M%S)
