@@ -14,7 +14,7 @@ spring:
     config:
       server:
         git:
-          uri: ${repository_url:https://gitlab.com/zalson/eai-config-files.git}
+          uri: ${repository_url:https://github.com/jczalson/eai-config-files.git}
           cloneOnStart: true
           username: ${user}
           password: ${token}
